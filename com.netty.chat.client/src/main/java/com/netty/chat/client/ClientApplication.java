@@ -18,8 +18,10 @@ public class ClientApplication {
     public static void main(String[] args) throws Exception {
 
         // Configure the client.
+        //一个EventLoopGroup包含一个或者多个EventLoop
         EventLoopGroup group = new NioEventLoopGroup();
         try {
+            //连接到远程主机和端口号
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
